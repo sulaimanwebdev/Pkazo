@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link';
 
 
-const completePostComponent = () => {
+const CompletePostComponent = () => {
 
     const [selectedImage, setselectedImage] = useState(1);
 
@@ -172,4 +172,4 @@ const completePostComponent = () => {
   )
 }
 
-export default completePostComponent
+export default CompletePostComponent
