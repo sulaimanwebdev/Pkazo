@@ -1,9 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -13,4 +16,83 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+.avgMaxWidth{
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-left:30px;
+  padding-right:30px;
+
+}
+
+
+.sc-bdvvtL{
+  border-color:rgb(194, 194, 194) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  height: 80px !important;
+
+}
+
+.sc-bdvvtL svg{
+display: none !important;
+}
+
+
+.sc-dkPtRN{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 30px !important;
+
+}
+
+.sc-dkPtRN span{
+  font-size: 18px !important;
+
+}
+
+.next-link a{
+  padding: 16px 70px;
+  margin: 0 auto;
+  background-color: #E24E4D;
+  border-radius: 50px;
+  transition: 0.3s;
+  width: fit-content;
+
+
+}
+
+.next-link a:hover{
+  background-color: #be4040;
+
+}
+
+.modal{
+  transform: translate(-50%, -50%);
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
+  grid-template-columns: 400px 1fr;
+}
+
+
+.modalParent{
+  background-color: rgba(0, 0, 0, 0.63);
+  transform: translate(-50%, -50%);
+}
+
+.blackOverlayPorfile{
+  background-color: rgba(0, 0, 0, 0.507);
+
+}
+
+.modalButtons{
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
 }
