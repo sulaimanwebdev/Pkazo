@@ -2,6 +2,10 @@ import { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import Link from 'next/link';
 
+
+const fileTypes = ["JPEG", "PNG", "GIF"];
+
+
 const Main = () => {
 
     const [file, setFile] = useState(null);
@@ -23,10 +27,12 @@ const Main = () => {
        </div>
 
 
-       <div className="flex items-center gap-1 opacity-75 cursor-pointer ">
+      <Link href="/complete-post">
+      <div className="flex items-center gap-1 opacity-75 cursor-pointer ">
        <span>Skip</span>
        <i className="far fa-angle-right text-2xl"></i>
        </div>
+       </Link>
 
 
     </div>
@@ -74,7 +80,7 @@ const Main = () => {
      
      <div className="text-xl opacity-80 mb-5">Select from Existing Posts</div>
 
-     <div className="grid grid-cols-5 gap-5 cursor-pointer">
+     <div className="grid grid-cols-3 lg:grid-cols-5 gap-5 cursor-pointer">
        <div className="h-auto ">
            <img src="/images/image1.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
@@ -137,12 +143,13 @@ const Main = () => {
         multiple={true}
         handleChange={handleChange}
         name="file"
+        types={fileTypes}
       />
 
    </div>
 
    <div className="px-[40px] flex items-center text-white text-lg next-link justify-start mb-20 mt-20">
-      <Link href="/">Next</Link>
+      <Link href="/complete-post">Next</Link>
    </div>
  
 
@@ -278,6 +285,7 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
         multiple={true}
         handleChange={handleChange}
         name="file"
+        types={fileTypes}
       />
       </div>
 

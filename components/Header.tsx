@@ -6,7 +6,7 @@ const Header = () => {
         <div className="avgMaxWidth flex items-center justify-between py-3 gap-7">
                  <div className="flex items-center gap-10">
                    <div className="cursor-pointer">
-                   <Link href="/blog" ><img src="/images/Pkazo.png" className='w-28' alt="Pkazo" /></Link>
+                   <Link href="/" ><img src="/images/Pkazo.png" className='w-28' alt="Pkazo" /></Link>
                    </div>
 
                    <div>
