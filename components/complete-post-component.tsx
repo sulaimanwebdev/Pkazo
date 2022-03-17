@@ -24,55 +24,6 @@ const CompletePostComponent = () => {
     
 
 
-
-
-      <div className="flex mt-16 items-center justify-between gap-10 px-[40px] max-w-[1250px] my-6 mx-auto">
-
-      <Link href="/">
-
-<div className="flex items-center gap-1 opacity-75 cursor-pointer ">
-<i className="far fa-angle-left text-2xl"></i>
-<span>Back</span>
-</div>
-</Link>
-
-
-<Link href="/complete-post">
-<div className="flex items-center gap-1 opacity-75 cursor-pointer ">
-<span>Skip</span>
-<i className="far fa-angle-right text-2xl"></i>
-</div>
-</Link>
-
-
-</div>
-
-
-
-
-      <div className="grid grid-cols-3  px-[40px] max-w-[1000px]  my-6 mx-auto ">
-   
-   <div className="bg-gray-300 h-[3px]"></div>
-   <div className="bg-gray-300 h-[3px]"></div>
-   <div className="bg-[#E24E4D] h-[3px]"></div>
-
-
-   </div>
-
-
-
-   <div className="grid grid-cols-3  px-[40px] max-w-[1000px] my-6 mx-auto">
-
-   <div className="flex items-center justify-center leading-[0.4] opacity-85">Work Information</div>
-   <div className="flex items-center justify-center leading-[0.4] opacity-85">In Progress Posts</div>
-   <div className="flex items-center justify-center leading-[0.4] opacity-85">Include In Portfolios</div>
-
-
-  </div>
-
-
-
-
   <div className="text-2xl max-w-[1000px] px-[40px]  leading-[1.5] mx-auto text-center opacity-80 mt-20 font-bold">
   Include this completed work in your portfolio!
    </div>
@@ -85,7 +36,7 @@ const CompletePostComponent = () => {
 
 <div onClick={() => {setselectedImage(1)}}>
 <div className={`${selectedImage === 1 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image1.svg" className='w-full h-full object-cover position-center'/>
+    <img src="/images/image1.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
 </div>
 <div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 1</div>
 </div>
@@ -95,7 +46,7 @@ const CompletePostComponent = () => {
 
 <div onClick={() => {setselectedImage(2)}}>
 <div className={`${selectedImage === 2 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image6.svg" className='w-full h-full object-cover position-center'/>
+    <img src="/images/image6.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
 </div>
 <div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 2</div>
 
@@ -108,7 +59,7 @@ const CompletePostComponent = () => {
 <div onClick={() => {setselectedImage(3)}}>
     
 <div className={`${selectedImage === 3 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image3.svg" className='w-full h-full object-cover position-center'/>
+    <img src="/images/image3.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
 </div>
 
 <div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 3</div>
@@ -120,7 +71,7 @@ const CompletePostComponent = () => {
 <div onClick={() => {setselectedImage(4)}}>
     
 <div className={`${selectedImage === 4 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image4.svg" className='w-full h-full object-cover position-center'/>
+    <img src="/images/image4.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
 </div>
 
 <div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 4</div>
@@ -131,7 +82,7 @@ const CompletePostComponent = () => {
 
 <div onClick={() => {setselectedImage(5)}}>
 <div className={`${selectedImage === 5 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image9.svg" className='w-full h-full object-cover position-center'/>
+    <img src="/images/image9.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
 </div>
 
 <div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 5</div>

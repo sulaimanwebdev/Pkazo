@@ -3,7 +3,7 @@ import { FileUploader } from "react-drag-drop-files";
 import Link from 'next/link';
 
 
-const fileTypes = ["JPEG", "PNG", "GIF"];
+const fileTypes = ["JPEG", "PNG", "GIF", "SVG"];
 
 
 const Main = () => {
@@ -11,6 +11,7 @@ const Main = () => {
     const [file, setFile] = useState(null);
     const handleChange = (file) => {
       setFile(file);
+      console.log(file)
     };
 
     const [modal, setmodal] = useState('opacity-0 invisible')
@@ -18,55 +19,10 @@ const Main = () => {
 
   return (
     <>
-    
-    <div className="flex items-center justify-between gap-10 px-[40px] max-w-[1250px] my-6 mx-auto">
-
-       <div className="flex items-center gap-1 opacity-75 cursor-pointer ">
-       <i className="far fa-angle-left text-2xl"></i>
-       <span>Back</span>
-       </div>
-
-
-      <Link href="/complete-post">
-      <div className="flex items-center gap-1 opacity-75 cursor-pointer ">
-       <span>Skip</span>
-       <i className="far fa-angle-right text-2xl"></i>
-       </div>
-       </Link>
-
-
-    </div>
-
-
-
-
-
-
-    <div className="grid grid-cols-3  px-[40px] max-w-[1000px] my-6 mx-auto">
    
-   <div className="bg-gray-300 h-[3px]"></div>
-   <div className="bg-[#E24E4D] h-[3px]"></div>
-   <div className="bg-gray-300 h-[3px]"></div>
 
 
-   </div>
-
-
-
-   <div className="grid grid-cols-3  px-[40px] max-w-[1000px] my-6 mx-auto">
-
-   <div className="flex items-center justify-center leading-[0.4] opacity-85">Work Information</div>
-   <div className="flex items-center justify-center leading-[0.4] opacity-85">In Progress Posts</div>
-   <div className="flex items-center justify-center leading-[0.4] opacity-85">Include In Portfolios</div>
-
-
-  </div>
-
-
-
-
-
-
+ 
 
    <div className="text-2xl max-w-[1000px] px-[40px]  leading-[1.5] mx-auto text-center opacity-80 mt-20 font-bold">
    Attach in progress posts of the same work to this completed work.  <br />
@@ -123,9 +79,21 @@ const Main = () => {
        </div>
 
 
-       <div className="h-auto ">
+       <div className=" h-auto">
            <img src="/images/image9.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
+
+       {file && (
+          <div className="h-auto rounded-lg ">
+            <img
+              src={URL.createObjectURL(file)}
+              className="w-full h-full object-cover position-center rounded-lg "
+              alt="Thumb"
+            />
+          
+          </div>
+        )}
+
 
 
      </div>
@@ -140,10 +108,16 @@ const Main = () => {
 
    <div className="flex items-center justify-center  px-[40px] max-w-[1000px] mt-20 mb-6 mx-auto ">
    <FileUploader
-        multiple={true}
+        multiple={false}
         handleChange={handleChange}
         name="file"
         types={fileTypes}
+        maxSize="100"
+
+        children={
+          <label className="sc-bdvvtL iciELI flex items-center justify-center  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file"  className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px] mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px] mx-[3px]">Drag and Drop</span> <span className="text-[18px]">right here</span></span></div></label>
+        }
+       
       />
 
    </div>
@@ -152,6 +126,7 @@ const Main = () => {
       <Link href="/complete-post">Next</Link>
    </div>
  
+
 
 
 
@@ -273,6 +248,18 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
    </div>
 
 
+   {file && (
+          <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+            <img
+              src={URL.createObjectURL(file)}
+              className="w-full h-full absolute top-0 left-0 object-cover position-center "
+            
+            />
+          
+          </div>
+        )}
+
+
 
 
 
@@ -281,12 +268,19 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
 
 
   <div className=" w-full modalUpload mt-10 mb-6 ">
-   <FileUploader
-        multiple={true}
+  <FileUploader
+        multiple={false}
         handleChange={handleChange}
         name="file"
         types={fileTypes}
+        maxSize="100"
+
+        children={
+          <label className="sc-bdvvtL iciELI flex items-center justify-center  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file" className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px] mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px] mx-[3px]">Drag and Drop</span> <span className="text-[18px]">right here</span></span></div></label>
+        }
+       
       />
+
       </div>
 
 

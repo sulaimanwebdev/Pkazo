@@ -38,7 +38,7 @@ a {
   height: 80px !important;
 
 }
-
+/* 
 .file-types{
   display:none;
 }
@@ -59,7 +59,7 @@ display: none !important;
 .sc-dkPtRN span{
   font-size: 18px !important;
 
-}
+} */
 
 .next-link a{
   padding: 16px 70px;
@@ -103,6 +103,13 @@ display: none !important;
 
 
 .active-Image{
-  outline: 5px solid rgba(128, 128, 128, 0.61);
-  transform: scale(1.1);
+  border: 5px solid rgba(128, 128, 128, 0.61);
+  width: 140px;
+  height: 140px;
+}
+
+
+.active-Image img{
+  width: 140px;
+  height: 140px;
 }

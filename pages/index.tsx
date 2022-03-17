@@ -1,9 +1,16 @@
 import Head from 'next/head'
 import Header from '../components/Header';
 import Main from '../components/Main';
-
+import Link from 'next/link';
+import CompletePostComponent from '../components/complete-post-component';
+import {useState} from 'react'
 
 export default function Home() {
+
+const [firstPage, setfirstPage] = useState('');
+const [secondPage, setsecondPage] = useState('hidden');
+
+
   return (
     <>
       <Head>
@@ -20,7 +27,94 @@ export default function Home() {
 
       
       <Header/>
-      <Main/>
+
+
+      
+
+
+
+
+      <div className="flex mt-16 items-center justify-between gap-10 px-[40px] max-w-[1250px] my-6 mx-auto">
+
+
+<div 
+onClick={() =>{
+  if(firstPage === ""){
+
+  }
+
+  else{
+    setfirstPage('');
+    setsecondPage('hidden');
+
+  }
+}}
+className="flex items-center gap-[10px] opacity-75 cursor-pointer ">
+<i className="far fa-angle-left text-[23px]"></i>
+<span>Back</span>
+</div>
+
+
+<div
+onClick={() =>{
+  if(firstPage === ""){
+    setfirstPage('hidden');
+    setsecondPage('');
+  }
+
+  else{
+    
+
+  }
+}}
+className="flex items-center gap-[10px] opacity-75 cursor-pointer ">
+<span>Skip</span>
+<i className="far fa-angle-right text-[23px]"></i>
+</div>
+
+
+</div>
+
+
+
+
+      <div className="grid grid-cols-3  px-[40px] max-w-[1000px]  my-6 mx-auto ">
+   
+   <div className="bg-gray-300 h-[3px]"></div>
+   <div className={firstPage === "" ? 'bg-[#E24E4D]' : "bg-gray-300 h-[3px]"}></div>
+   <div className={firstPage === "hidden" ? 'bg-[#E24E4D]' : "bg-gray-300 h-[3px]"}></div>
+
+
+   </div>
+
+
+
+   <div className="grid grid-cols-3  px-[40px] max-w-[1000px] my-6 mx-auto">
+
+   <div className="flex items-center justify-center leading-[0.4] opacity-85">Work Information</div>
+   <div className="flex items-center justify-center leading-[0.4] opacity-85">In Progress Posts</div>
+   <div className="flex items-center justify-center leading-[0.4] opacity-85">Include In Portfolios</div>
+
+
+  </div>
+
+
+
+
+
+{/* page 1 */}
+
+  <div className={firstPage}>
+  <Main/>
+  </div>
+    
+
+    {/* page 2 */}
+
+    <div className={secondPage}>
+    <CompletePostComponent/>
+    </div>
+
 
 
 
