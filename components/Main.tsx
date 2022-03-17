@@ -8,13 +8,52 @@ const fileTypes = ["JPEG", "PNG", "GIF", "SVG"];
 
 const Main = () => {
 
+   const [profilePicture, setprofilePicture] = useState('');
+   const [profilePictureURL, setprofilePictureURL] = useState('/images/image1.svg');
+
+
+   
+   const [actualProfileCont1, setactualProfileCont1] = useState('hidden');
+   const [actualProfileCont2, setactualProfileCont2] = useState('hidden');
+
+
+
+   const [replace, setreplace] = useState(null);
+
+
     const [file, setFile] = useState(null);
+
     const handleChange = (file) => {
       setFile(file);
-      console.log(file)
+      setactualProfileCont2('')
+      setticks("9")
+
     };
 
-    const [modal, setmodal] = useState('opacity-0 invisible')
+    const [modal, setmodal] = useState('opacity-0 invisible');
+
+
+
+
+
+
+    let replaceImage = (e) =>{
+
+      if (e.target.files && e.target.files.length > 0) {
+      
+        setprofilePicture("hidden");
+        setreplace(e.target.files[0]);
+        setactualProfileCont1('');
+        setactualProfileCont2('hidden');
+      
+    }
+    
+    }
+
+
+
+    const [ticks, setticks] = useState("0");
+
 
 
   return (
@@ -37,49 +76,49 @@ const Main = () => {
      <div className="text-xl opacity-80 mb-5">Select from Existing Posts</div>
 
      <div className="grid grid-cols-3 lg:grid-cols-5 gap-5 cursor-pointer">
-       <div className="h-auto ">
+       <div className="h-auto " >
            <img src="/images/image1.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
 
-       <div className="h-auto ">
+       <div className="h-auto " >
            <img src="/images/image2.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
 
 
-       <div className="h-auto ">
+       <div className="h-auto " >
            <img src="/images/image3.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
 
-       <div className="h-auto ">
+       <div className="h-auto "  >
            <img src="/images/image4.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
 
 
 
-       <div className="h-auto ">
+       <div className="h-auto " >
            <img src="/images/image5.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
 
 
 
-       <div className="h-auto ">
+       <div className="h-auto " >
            <img src="/images/image6.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
 
 
 
-       <div className="h-auto ">
+       <div className="h-auto " >
            <img src="/images/image7.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
 
 
 
-       <div className="h-auto ">
+       <div className="h-auto " >
            <img src="/images/image8.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
 
 
-       <div className=" h-auto">
+       <div className=" h-auto" >
            <img src="/images/image9.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
 
@@ -115,7 +154,7 @@ const Main = () => {
         maxSize="100"
 
         children={
-          <label className="sc-bdvvtL iciELI flex items-center justify-center  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file"  className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px] mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px] mx-[3px]">Drag and Drop</span> <span className="text-[18px]">right here</span></span></div></label>
+          <label className="sc-bdvvtL iciELI flex items-center justify-center rounded-sm  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file"  className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px] mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px] mx-[3px]">Drag and Drop</span> <span className="text-[18px]">right here</span></span></div></label>
         }
        
       />
@@ -141,10 +180,44 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
   
 <div className="">
   <div className="rounded-full relative mx-auto h-[200px] w-[200px] overflow-hidden flex items-center justify-center flex-col gap-5">
-   <img src="/images/image1.svg" className="w-full h-full absolute top-0 left-0 object-cover position-center"/>
+  
+   <img src={profilePictureURL} className={`w-full h-full absolute top-0 left-0 object-cover position-center ${profilePicture}`}/>
+  
+   {replace && (
+        
+            <img
+              src={URL.createObjectURL(replace)}
+    
+        className={`w-full h-full absolute top-0 left-0 object-cover position-center ${actualProfileCont1}`}
+              alt="Thumb"
+            />
+            
+        )}
+
+{file && (
+            <img
+              src={URL.createObjectURL(file)}
+              className={`w-full h-full absolute top-0 left-0 object-cover position-center ${actualProfileCont2}`}
+              alt="Thumb"
+            />
+          
+        )}
+
+  
    <div className="w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile"></div>
-   <button className="w-32 py-[5px] rounded text-white font-bold z-10 border-2 border-white">Replace</button>
-   <button className="w-32 py-[5px] rounded text-white font-bold z-10 border-2 border-white">Delete</button>
+
+   <label htmlFor="replaceImage" className="w-32 py-[5px] rounded cursor-pointer flex items-center justify-center text-white font-bold z-10 border-2 border-white">Replace</label>
+   <input type="file" className="hidden" accept=".jpeg,.png,.gif,.svg" onChange={replaceImage} id="replaceImage" />
+
+   <button
+   onClick={()=> {
+
+    setprofilePicture('hidden')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+    setticks("-1")
+   }}
+   className="w-32 py-[5px] rounded text-white font-bold z-10 border-2 border-white">Delete</button>
 
   </div>
 
@@ -162,42 +235,93 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
   <div className="opacity-80 font-bold mb-4 text-[19px]">Select the pieces that you would like in this portfolio</div>
   <div className="grid  gap-5 grid-cols-5 mb-10">
 
-  <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+  <div
+  onClick={() => 
+    {
+    setticks("0")
+    setprofilePictureURL('/images/image1.svg')
+    setprofilePicture('flex')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+    }
+  }
+  className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
            <img src="/images/image1.svg" alt="post" className='w-full h-full absolute top-0 left-0 object-cover position-center' />
-   <div className="w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile"></div>
-   <i className="far fa-check z-10 text-white text-4xl"></i>
+   <div className={ticks === "0" ? "w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "0" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
    </div>
 
 
-   <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+   <div
+   onClick={() => {
+     setticks("1")
+     setprofilePictureURL('/images/image2.svg')
+     setprofilePicture('flex')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+  
+  }}
+   className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
            <img src="/images/image2.svg" alt="post" className='w-full h-full absolute top-0 left-0 object-cover position-center' />
-   <div className="w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile"></div>
-   <i className="far fa-check z-10 text-white text-4xl"></i>
+   <div className={ticks === "1" ? "w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "1" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
    </div>
 
 
-   <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+   <div
+   onClick={() => {
+     
+    setticks("2")
+    setprofilePictureURL('/images/image3.svg')
+    setprofilePicture('flex')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+
+  
+  }}
+   className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
            <img src="/images/image3.svg" alt="post" className='w-full h-full absolute top-0 left-0 object-cover position-center' />
-   <div className="w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile"></div>
-   <i className="far fa-check z-10 text-white text-4xl"></i>
+   <div className={ticks === "2" ? "w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "2" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
    </div>
 
 
 
 
-   <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+   <div 
+   onClick={() => {
+     setticks("3")
+     setprofilePictureURL('/images/image4.svg')
+     setprofilePicture('flex')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+    
+    }}
+   className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
            <img src="/images/image4.svg" alt="post" className='w-full h-full absolute top-0 left-0 object-cover position-center' />
-   
+           <div className={ticks === "3" ? "w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "3" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
 
    </div>
 
 
 
 
-   <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+   <div 
+   onClick={() => {
+     
+    setticks("4")
+    setprofilePictureURL('/images/image5.svg')
+    setprofilePicture('flex')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+  
+  }}
+   className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
            <img src="/images/image5.svg" alt="post" className='w-full h-full absolute top-0 left-0 object-cover position-center' />
    
-
+           <div className={ticks === "4" ? "w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "4" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
    </div>
 
 
@@ -206,9 +330,20 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
 
 
 
-   <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+   <div 
+   onClick={() => {
+     
+    setticks("5")
+    setprofilePictureURL('/images/image6.svg')
+    setprofilePicture('flex')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+  
+  }}
+   className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
            <img src="/images/image6.svg" alt="post" className='w-full h-full absolute top-0 left-0 object-cover position-center' />
-   
+           <div className={ticks === "5" ? "w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "5" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
 
    </div>
 
@@ -216,9 +351,21 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
 
 
 
-   <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+   <div 
+   onClick={() => {
+     
+    setticks("6")
+    setprofilePictureURL('/images/image7.svg')
+    setprofilePicture('flex')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+
+  
+  }}
+   className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
            <img src="/images/image7.svg" alt="post" className='w-full h-full absolute top-0 left-0 object-cover position-center' />
-   
+           <div className={ticks === "6" ? "w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "6" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
 
    </div>
 
@@ -229,9 +376,20 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
 
 
 
-   <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+   <div
+   onClick={() => {
+     setticks("7")
+     setprofilePictureURL('/images/image8.svg')
+     setprofilePicture('flex')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+
+  
+  }}
+   className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
            <img src="/images/image8.svg" alt="post" className='w-full h-full absolute top-0 left-0 object-cover position-center' />
-   
+           <div className={ticks === "7" ? "w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "7" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
 
    </div>
 
@@ -241,23 +399,54 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
 
 
 
-   <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+   <div
+   onClick={() => {
+     setticks("8")
+     setprofilePictureURL('/images/image9.svg')
+     setprofilePicture('flex')
+    setactualProfileCont1('hidden')
+    setactualProfileCont2('hidden')
+
+  
+  }}
+   className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
            <img src="/images/image9.svg" alt="post" className='w-full h-full absolute top-0 left-0 object-cover position-center' />
    
-
+<div className={ticks === "8" ? "w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "8" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
+          
+          
    </div>
 
 
    {file && (
-          <div className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
+          <div 
+          onClick={() => {
+            setticks("9")
+            setprofilePicture('hidden')
+
+
+      setactualProfileCont2('')
+      setactualProfileCont1('hidden')
+
+
+
+        
+        }}
+          className="h-[120px] rounded-md relative overflow-hidden cursor-pointer flex items-center justify-center">
             <img
               src={URL.createObjectURL(file)}
-              className="w-full h-full absolute top-0 left-0 object-cover position-center "
-            
+              className="w-full h-full absolute top-0 left-0 object-cover position-center "            
             />
+
+<div className={ticks === "9" ? "w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile" : "hidden"}></div>
+   <i className={ticks === "9" ? "far fa-check z-10 text-white text-4xl" : "hidden"}></i>
           
           </div>
         )}
+
+
+
 
 
 
@@ -276,7 +465,7 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
         maxSize="100"
 
         children={
-          <label className="sc-bdvvtL iciELI flex items-center justify-center  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file" className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px] mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px] mx-[3px]">Drag and Drop</span> <span className="text-[18px]">right here</span></span></div></label>
+          <label className="sc-bdvvtL rounded-sm iciELI flex items-center justify-center  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file" className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px] mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px] mx-[3px]">Drag and Drop</span> <span className="text-[18px]">right here</span></span></div></label>
         }
        
       />
