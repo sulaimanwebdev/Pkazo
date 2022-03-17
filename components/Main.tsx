@@ -75,7 +75,7 @@ const Main = () => {
      
      <div className="text-xl opacity-80 mb-5">Select from Existing Posts</div>
 
-     <div className="grid grid-cols-3 lg:grid-cols-5 gap-5 cursor-pointer">
+     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 cursor-pointer">
        <div className="h-auto " >
            <img src="/images/image1.svg" alt="post" className='w-full h-full object-cover position-center' />
        </div>
@@ -456,7 +456,7 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
   </div>
 
 
-  <div className=" w-full modalUpload mt-10 mb-6 ">
+  <div className=" w-full modalUpload mt-10 ">
   <FileUploader
         multiple={false}
         handleChange={handleChange}

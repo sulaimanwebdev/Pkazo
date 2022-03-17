@@ -36,9 +36,9 @@ const CompletePostComponent = () => {
 
 <div onClick={() => {setselectedImage(1)}}>
 <div className={`${selectedImage === 1 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image1.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
+    <img src="/images/image1.svg" className='w-[130px] h-[130px] rounded-full transform -translate-y-1 object-cover position-center'/>
 </div>
-<div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 1</div>
+<div className='mx-auto opacity-85 mt-5 flex items-center justify-center'>Series 1</div>
 </div>
 
 
@@ -46,9 +46,9 @@ const CompletePostComponent = () => {
 
 <div onClick={() => {setselectedImage(2)}}>
 <div className={`${selectedImage === 2 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image6.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
+    <img src="/images/image6.svg" className='w-[130px] h-[130px] rounded-full transform -translate-y-1 object-cover position-center'/>
 </div>
-<div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 2</div>
+<div className='mx-auto opacity-85 mt-5 flex items-center justify-center'>Series 2</div>
 
 
 </div>
@@ -59,10 +59,10 @@ const CompletePostComponent = () => {
 <div onClick={() => {setselectedImage(3)}}>
     
 <div className={`${selectedImage === 3 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image3.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
+    <img src="/images/image3.svg" className='w-[130px] h-[130px] rounded-full transform -translate-y-1 object-cover position-center'/>
 </div>
 
-<div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 3</div>
+<div className='mx-auto opacity-85 mt-5 flex items-center justify-center'>Series 3</div>
 
 
 </div>
@@ -71,10 +71,10 @@ const CompletePostComponent = () => {
 <div onClick={() => {setselectedImage(4)}}>
     
 <div className={`${selectedImage === 4 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image4.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
+    <img src="/images/image4.svg" className='w-[130px] h-[130px] rounded-full transform -translate-y-1 object-cover position-center'/>
 </div>
 
-<div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 4</div>
+<div className='mx-auto opacity-85 mt-5 flex items-center justify-center'>Series 4</div>
 
 
 </div>
@@ -82,10 +82,10 @@ const CompletePostComponent = () => {
 
 <div onClick={() => {setselectedImage(5)}}>
 <div className={`${selectedImage === 5 ? "active-Image" : "non-active-image"} w-[130px] h-[130px] cursor-pointer rounded-full overflow-hidden`}>
-    <img src="/images/image9.svg" className='w-[130px] h-[130px] rounded-full object-cover position-center'/>
+    <img src="/images/image9.svg" className='w-[130px] h-[130px] rounded-full transform -translate-y-1 object-cover position-center'/>
 </div>
 
-<div className='mx-auto opacity-85 mt-3 flex items-center justify-center'>Series 5</div>
+<div className='mx-auto opacity-85 mt-5 flex items-center justify-center'>Series 5</div>
 
 </div>
 
