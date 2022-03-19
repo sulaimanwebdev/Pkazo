@@ -154,14 +154,14 @@ const Main = () => {
         maxSize="100"
 
         children={
-          <label className="sc-bdvvtL iciELI flex items-center justify-center rounded-sm  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file"  className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px] mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px] mx-[3px]">Drag and Drop</span> <span className="text-[18px]">right here</span></span></div></label>
+          <label className="sc-bdvvtL iciELI flex items-center justify-center rounded-sm  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file"  className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px] opacity-70 mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px]  opacity-70 mx-[3px]">Drag and Drop</span> <span className="text-[18px]">works from computer</span></span></div></label>
         }
        
       />
 
    </div>
 
-   <div className="px-[40px] flex items-center text-white text-lg next-link justify-start mb-20 mt-20">
+   <div className="px-[40px] flex items-center  font-bold text-white text-lg next-link justify-start mb-20 mt-20">
       <Link href="/complete-post">Next</Link>
    </div>
  
@@ -206,7 +206,7 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
   
    <div className="w-full h-full absolute top-0 left-0 z-5 blackOverlayPorfile"></div>
 
-   <label htmlFor="replaceImage" className="w-32 py-[5px] rounded cursor-pointer flex items-center justify-center text-white font-bold z-10 border-2 border-white">Replace</label>
+   <label htmlFor="replaceImage" className="w-32 py-[5px] rounded cursor-pointer flex items-center justify-center text-white font-bold z-10 border-2 border-white transition hover:bg-[white] hover:opacity-80 hover:text-[#000000b9]">Replace</label>
    <input type="file" className="hidden" accept=".jpeg,.png,.gif,.svg" onChange={replaceImage} id="replaceImage" />
 
    <button
@@ -217,7 +217,7 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
     setactualProfileCont2('hidden')
     setticks("-1")
    }}
-   className="w-32 py-[5px] rounded text-white font-bold z-10 border-2 border-white">Delete</button>
+   className="w-32 py-[5px] rounded text-white font-bold z-10 border-2 transition hover:bg-[white] hover:opacity-80 hover:text-[#000000b9]">Delete</button>
 
   </div>
 
@@ -465,7 +465,7 @@ className={`modalParent w-screen fixed top-1/2 transition left-1/2  h-screen ${m
         maxSize="100"
 
         children={
-          <label className="sc-bdvvtL rounded-sm iciELI flex items-center justify-center  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file" className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px] mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px] mx-[3px]">Drag and Drop</span> <span className="text-[18px]">right here</span></span></div></label>
+          <label className="sc-bdvvtL rounded-sm iciELI flex items-center justify-center  border-dashed border-2 border-gray-400 " htmlFor="file"><input type="file" className="hidden" accept=".jpeg,.png,.gif" name="file" /><div className="sc-dkPtRN ebdQkY flex items-center justify-center  mx-auto"><span className="mx-auto"><span className="font-bold text-[21px]  opacity-70 mr-[3px]">Upload</span> <span className="text-[18px]">or</span> <span className="font-bold text-[21px]  opacity-70 mx-[3px]">Drag and Drop</span> <span className="text-[18px]">works from computer</span></span></div></label>
         }
        
       />

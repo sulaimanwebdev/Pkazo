@@ -95,7 +95,7 @@ const CompletePostComponent = () => {
 
 
 
-   <div className="px-[40px] flex items-center text-white text-lg next-link justify-start mb-20 mt-40">
+   <div className="px-[40px] flex items-center text-white font-bold text-lg next-link justify-start mb-20 mt-40">
       <Link href="/complete-post">Post Completed Work</Link>
    </div>
  
