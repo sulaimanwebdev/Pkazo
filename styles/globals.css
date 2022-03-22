@@ -95,6 +95,9 @@ a {
 }
 
 
+
+
+
 @media (max-width:1200px){
   .modal{
   grid-template-columns: 300px 1fr;
