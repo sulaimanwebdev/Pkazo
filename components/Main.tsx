@@ -26,7 +26,6 @@ const Main = () => {
     const handleChange = (file) => {
       setFile(file);
       setactualProfileCont2('')
-      setticks("9")
 
     };
 
@@ -52,7 +51,20 @@ const Main = () => {
 
 
 
-    const [ticks, setticks] = useState("0");
+
+
+    const [selectImagePopup1, setselectImagePopup1] = useState('hidden');
+    const [selectImagePopup2, setselectImagePopup2] = useState('hidden');
+    const [selectImagePopup3, setselectImagePopup3] = useState('hidden');
+    const [selectImagePopup4, setselectImagePopup4] = useState('hidden');
+    const [selectImagePopup5, setselectImagePopup5] = useState('hidden');
+    const [selectImagePopup6, setselectImagePopup6] = useState('hidden');
+    const [selectImagePopup7, setselectImagePopup7] = useState('hidden');
+    const [selectImagePopup8, setselectImagePopup8] = useState('hidden');
+    const [selectImagePopup9, setselectImagePopup9] = useState('hidden');
+    const [selectImagePopup10, setselectImagePopup10] = useState('hidden');
+
+
 
 
 
@@ -76,59 +88,195 @@ const Main = () => {
      <div className="text-xl opacity-80 mb-5">Select from Existing Posts</div>
 
      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 cursor-pointer">
-       <div className="h-auto " >
-           <img src="/images/image1.svg" alt="post" className='w-full h-full object-cover position-center' />
+       <div className=" h-[190px]   rounded-lg overflow-hidden relative  flex items-center justify-center" 
+         onClick={()=>{
+          if(selectImagePopup1 === "hidden"){
+            setselectImagePopup1("flex");
+          }
+      
+          else{
+            setselectImagePopup1("hidden");
+      
+          }
+        }}
+       >
+           <img src="/images/image1.svg" alt="post" className='w-full h-full object-cover position-center absolute top-0 left-0 ' />
+
+           <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup1}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup1}`}></i>
+      
        </div>
 
-       <div className="h-auto " >
-           <img src="/images/image2.svg" alt="post" className='w-full h-full object-cover position-center' />
-       </div>
+       <div className=" h-[190px]   rounded-lg overflow-hidden relative  flex items-center justify-center"
+         onClick={()=>{
+          if(selectImagePopup2 === "hidden"){
+            setselectImagePopup2("flex");
+          }
+      
+          else{
+            setselectImagePopup2("hidden");
+      
+          }
+        }}
+       >
+           <img src="/images/image2.svg" alt="post" className='w-full h-full object-cover position-center absolute top-0 left-0 ' />
 
-
-       <div className="h-auto " >
-           <img src="/images/image3.svg" alt="post" className='w-full h-full object-cover position-center' />
-       </div>
-
-       <div className="h-auto "  >
-           <img src="/images/image4.svg" alt="post" className='w-full h-full object-cover position-center' />
-       </div>
-
-
-
-       <div className="h-auto " >
-           <img src="/images/image5.svg" alt="post" className='w-full h-full object-cover position-center' />
-       </div>
-
-
-
-       <div className="h-auto " >
-           <img src="/images/image6.svg" alt="post" className='w-full h-full object-cover position-center' />
-       </div>
-
-
-
-       <div className="h-auto " >
-           <img src="/images/image7.svg" alt="post" className='w-full h-full object-cover position-center' />
-       </div>
-
-
-
-       <div className="h-auto " >
-           <img src="/images/image8.svg" alt="post" className='w-full h-full object-cover position-center' />
+           <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup2}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup2}`}></i>
+      
        </div>
 
 
-       <div className=" h-auto" >
-           <img src="/images/image9.svg" alt="post" className='w-full h-full object-cover position-center' />
+       <div className=" h-[190px]   rounded-lg overflow-hidden relative  flex items-center justify-center" 
+        onClick={()=>{
+          if(selectImagePopup3 === "hidden"){
+            setselectImagePopup3("flex");
+          }
+      
+          else{
+            setselectImagePopup3("hidden");
+      
+          }
+        }}
+       >
+           <img src="/images/image3.svg" alt="post" className='w-full h-full object-cover position-center absolute top-0 left-0 ' />
+
+           <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup3}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup3}`}></i>
+      
+       </div>
+
+       <div className=" h-[190px]   rounded-lg overflow-hidden relative  flex items-center justify-center"  onClick={()=>{
+          if(selectImagePopup4 === "hidden"){
+            setselectImagePopup4("flex");
+          }
+      
+          else{
+            setselectImagePopup4("hidden");
+      
+          }
+        }}  >
+           <img src="/images/image4.svg" alt="post" className='w-full h-full object-cover position-center absolute top-0 left-0 ' />
+
+           <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup4}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup4}`}></i>
+      
+       </div>
+
+
+
+       <div className=" h-[190px]   rounded-lg overflow-hidden relative  flex items-center justify-center"  onClick={()=>{
+          if(selectImagePopup5 === "hidden"){
+            setselectImagePopup5("flex");
+          }
+      
+          else{
+            setselectImagePopup5("hidden");
+      
+          }
+        }} >
+           <img src="/images/image5.svg" alt="post" className='w-full h-full object-cover position-center absolute top-0 left-0 ' />
+
+           <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup5}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup5}`}></i>
+      
+       </div>
+
+
+
+       <div className=" h-[190px]   rounded-lg overflow-hidden relative  flex items-center justify-center"  onClick={()=>{
+          if(selectImagePopup6 === "hidden"){
+            setselectImagePopup6("flex");
+          }
+      
+          else{
+            setselectImagePopup6("hidden");
+      
+          }
+        }}>
+           <img src="/images/image6.svg" alt="post" className='w-full h-full object-cover position-center absolute top-0 left-0 ' />
+
+           <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup6}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup6}`}></i>
+      
+       </div>
+
+
+
+       <div className=" h-[190px]   rounded-lg overflow-hidden relative  flex items-center justify-center"  onClick={()=>{
+          if(selectImagePopup7 === "hidden"){
+            setselectImagePopup7("flex");
+          }
+      
+          else{
+            setselectImagePopup7("hidden");
+      
+          }
+        }}>
+           <img src="/images/image7.svg" alt="post" className='w-full h-full object-cover position-center absolute top-0 left-0 ' />
+
+           <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup7}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup7}`}></i>
+      
+       </div>
+
+
+
+       <div className=" h-[190px]   rounded-lg overflow-hidden relative  flex items-center justify-center"  onClick={()=>{
+          if(selectImagePopup8 === "hidden"){
+            setselectImagePopup8("flex");
+          }
+      
+          else{
+            setselectImagePopup8("hidden");
+      
+          }
+        }}>
+           <img src="/images/image8.svg" alt="post" className='w-full h-full object-cover position-center absolute top-0 left-0 ' />
+
+           <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup8}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup8}`}></i>
+      
+       </div>
+
+
+       <div className=" relative rounded-lg overflow-hidden flex items-center justify-center"  onClick={()=>{
+          if(selectImagePopup9 === "hidden"){
+            setselectImagePopup9("flex");
+          }
+      
+          else{
+            setselectImagePopup9("hidden");
+      
+          }
+        }} >
+           <img src="/images/image9.svg" alt="post" className='w-full absolute top-0 left-0 h-full object-cover position-center ' />
+
+           <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup9}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup9}`}></i>
+      
        </div>
 
        {file && (
-          <div className="h-auto rounded-lg ">
+          <div className="  relative rounded-lg  flex items-center justify-center "  onClick={()=>{
+            if(selectImagePopup10 === "hidden"){
+              setselectImagePopup10("flex");
+            }
+        
+            else{
+              setselectImagePopup10("hidden");
+        
+            }
+          }}>
             <img
               src={URL.createObjectURL(file)}
-              className="w-full h-full object-cover position-center rounded-lg "
+              className="w-full h-full object-cover position-center absolute top-0 left-0  rounded-lg "
               alt="Thumb"
             />
+
+            <div className={`w-full h-full absolute top-0 left-0 z-5  blackOverlayPorfile ${selectImagePopup10}`}></div>
+   <i className={`far fa-check z-50 text-white text-4xl ${selectImagePopup10}`}></i>
+      
           
           </div>
         )}
