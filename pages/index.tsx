@@ -34,7 +34,7 @@ const [secondPage, setsecondPage] = useState('hidden');
 
 
 
-      <div className="flex mt-16 items-center justify-between gap-10 px-[40px] max-w-[1250px] my-6 mx-auto">
+      <div className="flex mt-7 items-center justify-between gap-10 px-[40px] max-w-[1250px] my-6 mx-auto">
 
 
 <div 
@@ -77,8 +77,9 @@ className="flex items-center gap-[10px] opacity-75 cursor-pointer ">
 
 
 
-
-      <div className="grid grid-cols-3  px-[40px] max-w-[1000px]  my-6 mx-auto ">
+<div className="transfom -translate-y-[2.5rem]">
+  
+<div className="grid grid-cols-3  px-[40px] max-w-[1000px]  mb-6 mx-auto ">
    
    <div className="bg-gray-300 h-[3px]"></div>
    <div className={firstPage === "" ? 'bg-[#E24E4D]' : "bg-gray-300 h-[3px]"}></div>
@@ -89,7 +90,7 @@ className="flex items-center gap-[10px] opacity-75 cursor-pointer ">
 
 
 
-   <div className="grid grid-cols-3  px-[40px] max-w-[1000px] my-6 mx-auto">
+   <div className="grid grid-cols-3  px-[40px] max-w-[1000px] mb-6 mx-auto">
 
    <div className="flex items-center justify-center leading-[0.4] opacity-85">Work Information</div>
    <div className="flex items-center justify-center leading-[0.4] opacity-85">In Progress Posts</div>
@@ -97,6 +98,7 @@ className="flex items-center gap-[10px] opacity-75 cursor-pointer ">
 
 
   </div>
+</div>
 
 
 

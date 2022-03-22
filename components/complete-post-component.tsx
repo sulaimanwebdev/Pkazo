@@ -24,13 +24,13 @@ const CompletePostComponent = () => {
     
 
 
-  <div className="text-2xl max-w-[1000px] px-[40px]  leading-[1.5] mx-auto text-center opacity-80 mt-20 font-bold">
+  <div className="text-2xl max-w-[1000px] px-[40px]  leading-[1.5] mx-auto text-center opacity-80 mt-12 font-bold">
   Include this completed work in your portfolio!
    </div>
 
 
 
-   <div className="max-w-[1100px] gap-5 px-[40px] mx-auto flex items-center justify-between flex-wrap mt-24 mb-10">
+   <div className="max-w-[1100px] gap-5 px-[40px] mx-auto flex items-center justify-between flex-wrap mt-24">
 
 
 
@@ -95,7 +95,7 @@ const CompletePostComponent = () => {
 
 
 
-   <div className="px-[40px] flex items-center text-white font-bold text-lg next-link justify-start mb-20 mt-40">
+   <div className="px-[40px] lastScreenButton flex items-center text-white font-bold text-lg next-link justify-start mb-20 mt-[6rem]">
       <Link href="/complete-post">Post Completed Work</Link>
    </div>
  

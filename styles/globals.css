@@ -41,7 +41,12 @@ a {
 
 
 .next-link a{
-  padding: 16px 70px;
+  height: 48px;
+  min-width: 112px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   background-color: #E24E4D;
   border-radius: 50px;
@@ -50,7 +55,10 @@ a {
 
 
 }
-
+.lastScreenButton a{
+  min-width: 300px;
+  
+}
 .next-link a:hover{
   background-color: #be4040;
 
@@ -83,7 +91,7 @@ a {
 
 
 .active-Image{
-  border: 5px solid rgba(128, 128, 128, 0.61);
+  border: 6px solid rgba(128, 128, 128, 0.61);
   width: 140px;
   height: 140px;
 }
